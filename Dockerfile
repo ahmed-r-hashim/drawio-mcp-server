@@ -14,7 +14,7 @@ FROM node:26.7.0-alpine3.24 AS deps
 
 WORKDIR /app
 
-RUN corepack enable && corepack prepare pnpm@10.8.1 --activate
+RUN corepack enable && corepack prepare pnpm@11.25.0 --activate
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY packages ./packages
@@ -28,7 +28,7 @@ FROM node:26.7.0-alpine3.24 AS build
 
 WORKDIR /app
 
-RUN corepack enable && corepack prepare pnpm@10.8.1 --activate
+RUN corepack enable && corepack prepare pnpm@11.25.0 --activate
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.json ./
 COPY packages ./packages
@@ -51,7 +51,7 @@ FROM node:26.7.0-alpine3.24 AS runtime
 
 WORKDIR /app
 
-RUN corepack enable && corepack prepare pnpm@10.8.1 --activate
+RUN corepack enable && corepack prepare pnpm@11.25.0 --activate
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 # Runtime needs only these packages: compat is vendored into the server
@@ -74,4 +74,4 @@ EXPOSE 3333 3000
 ENV XDG_DATA_HOME=/data
 VOLUME ["/data/drawio-mcp-server/tls"]
 
-CMD ["node", "packages/drawio-mcp-server/build/index.js", "--editor"]
+CMD ["node", "packages/drawio-mcp-server/build/index.js", "--transport", "http", "--http-port,", "3000", "--extension-port", "3333"]

@@ -1,7 +1,3 @@
-onlyBuiltDependencies:
-  - esbuild
-  - unrs-resolver
-
 packages:
   - 'packages/*'
 
@@ -38,3 +34,7 @@ auditConfig:
     - GHSA-vfj7-8cjw-p6xm # braces <=3.0.3, high, no fix released
     - GHSA-hp3w-g68c-fv3c # sprintf-js <=1.1.3, moderate, no fix released
     - GHSA-gcqx-w48m-w2h4 # deepmerge <5.1.1, low (jest chain, test-only), no fix released
+
+allowBuilds:
+  esbuild: true
+  spawn-sync: false

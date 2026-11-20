@@ -17,7 +17,8 @@
     "compile": "tsc --noEmit",
     "test:iframe-host": "tsx scripts/serve-iframe-host.ts",
     "postinstall": "wxt prepare",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage"
   },
   "keywords": [
     "mcp",

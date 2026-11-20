@@ -147,3 +147,4 @@ build/
 playwright-report/
 test-results/
 test-diagram/
+data/*

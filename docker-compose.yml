@@ -1,0 +1,11 @@
+services:
+  mcp-drawio-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000 # HTTP port for draw.io server
+      - 3333:3333 # websocket port
+    volumes:
+      - ./data:/app/data
+ 

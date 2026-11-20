@@ -5,9 +5,11 @@
     "moduleResolution": "nodenext",
     "outDir": "./build",
     "rootDir": "src",
+    "sourceMap": true,
     "strict": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "isolatedModules": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },

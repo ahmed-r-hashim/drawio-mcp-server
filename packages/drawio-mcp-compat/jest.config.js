@@ -4,4 +4,7 @@ export default {
   extensionsToTreatAsEsm: [".ts"],
   moduleNameMapper: { "^(\\.{1,2}/.*)\\.js$": "$1" },
   testMatch: ["**/*.test.ts"],
+  coverageProvider: "v8",
+  collectCoverageFrom: ["src/**/*.ts", "!src/**/*.test.ts"],
+  coverageReporters: ["text-summary", "lcov", "json"],
 };

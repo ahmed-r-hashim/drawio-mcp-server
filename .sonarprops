@@ -1,0 +1,14 @@
+sonar.projectName=drawio-mcp-server
+sonar.projectKey=drawio-mcp-server
+sonar.projectVersion=1.0
+# Sonar configurations
+sonar.sourceEncoding=UTF-8
+sonar.language=ts
+sonar.sources=packages/drawio-mcp-server/src,packages/drawio-mcp-plugin/src,packages/drawio-mcp-compat/src
+sonar.tests=packages/drawio-mcp-server/src,packages/drawio-mcp-plugin/src,packages/drawio-mcp-compat/src
+sonar.test.inclusions=**/*.test.ts
+sonar.typescript.tsconfigPaths=packages/drawio-mcp-server/tsconfig.json,packages/drawio-mcp-plugin/tsconfig.json,packages/drawio-mcp-compat/tsconfig.json,packages/drawio-mcp-dev-proxy/tsconfig.json
+sonar.exclusions=**/dist/**,**/*.test.ts
+sonar.coverage.exclusions=**/*.test.*
+sonar.javascript.lcov.reportPaths=coverage/lcov.info
+sonar.dependencyCheck.htmlReportPath=coverage/dependency-check-report.html

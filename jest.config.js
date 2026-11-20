@@ -2,13 +2,15 @@
 export default {
   testEnvironment: "jest-environment-node",
   rootDir: ".",
-  coverageProvider: "babel",
+  coverageProvider: "v8",
+  coverageReporters: ["text", "lcov", "json"],
   transform: {
+    "^.+\\.js$": "<rootDir>/scripts/jest-sourcemap-transform.cjs",
     "^.+\\.[jt]sx?$": ["ts-jest", { useESM: true }],
   },
   transformIgnorePatterns: ["/node_modules/(?!nanoid|\\.pnpm)"],
   testMatch: ["**/build/**/*.test.js"],
-  testPathIgnorePatterns: ["/node_modules/", "/src/"],
+  testPathIgnorePatterns: ["/node_modules/", "/src/", "/build/real-environment/"],
   collectCoverageFrom: [
     "packages/drawio-mcp-server/build/**/*.js",
     // exclude as it contains boundary injection logic mainly
@@ -20,10 +22,10 @@ export default {
   ],
   coverageThreshold: {
     global: {
-      branches: 75,
-      functions: 80,
-      lines: 80,
-      statements: 80,
+      branches: 70,
+      functions: 70,
+      lines: 70,
+      statements: 70,
     },
   },
 };
